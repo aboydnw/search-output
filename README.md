@@ -52,9 +52,7 @@ to project repositories, SSH keys, or GitHub credentials.
 
 ### Crawler
 
-The crawler is a standalone Python script registered as a custom OpenClaw 
-skill at `/home/claw/workspace/titiler-crawler/crawler.py`. It runs inside 
-a Python venv and has three source modules:
+The crawler is a standalone Python script registered as a custom OpenClaw skill. It runs inside a Python venv and has three source modules:
 
 **GitHub Search API** (`source: github`)
 - Unauthenticated requests to `api.github.com/search/repositories`
@@ -74,9 +72,7 @@ a Python venv and has three source modules:
 
 ### Dedup and output
 
-Before appending, the script loads all existing URLs from the CSV into a 
-set and skips any result already present. Results are appended to 
-`/srv/search-output/data/{tool}/implementations.csv` on the shared volume.
+Before appending, the script loads all existing URLs from the CSV into a set and skips any result already present. New results are written to the relevant data/{tool}/implementations.csv file in this repo.
 
 ### Sync
 
